@@ -1,0 +1,89 @@
+.header {
+  background-color: $color-grey-dark-1;
+  // grid-row: 1/2;
+  grid-column: full-start/col-end 6;
+  background-image: linear-gradient(
+      rgba($color-secondary, 0.93),
+      rgba($color-secondary, 0.93)
+    ),
+    url(../img/hero.jpeg);
+  // Выравниваем картинку по центру
+  background-size: cover;
+  background-position: center;
+  padding: 8rem;
+  padding-top: 4rem;
+
+  display: grid;
+  // grid-template-rows: 1fr min-content 6rem 1fr;
+  // grid-template-columns: max-content;
+  // ниже прописываем более отзывчивый 
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
+  grid-gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
+
+  &__logo-name {
+    height: 3rem;
+    // align-self: center;
+    justify-self: center;
+  }
+
+  &__btn {
+    align-self: start;
+    justify-self: start;
+  }
+
+  &__other {
+    // width: 100%;
+    // justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.5rem;
+    align-items: center;
+
+    font-size: 1.6rem;
+    color: $color-grey-light-2;
+    //Заменим гапом
+    // justify-content: space-between;
+
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor;
+    }
+
+  }
+
+  &__otherlogo {
+    // width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    // grid-template-rows: max-content;
+    align-items: center;
+    justify-items: center;
+    grid-column-gap: 3rem;
+    img {
+      max-height: 2.5rem;
+      max-width: 100%;
+      filter: brightness(70%);
+    }
+  }
+  // heading прописаны в типографии
+
+  @media only screen and(max-width:$bp-large) {
+    grid-row: 2/3;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1/-1;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 5rem;
+  }
+
+}

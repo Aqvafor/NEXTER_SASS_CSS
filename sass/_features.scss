@@ -1,0 +1,58 @@
+.features {
+  background-color: #fff;
+  // grid-row: 2/3;
+  grid-column: center-start/center-end;
+  margin: 15rem 0;
+
+  display: grid;
+  // grid-auto-rows:150px;
+  // Стоки може не обозначать. так как они могут меняться в зависимоти от размера экрана
+  // grid-template-rows:repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  align-items: start;
+
+  // @media only screen and(max-width:$bp-large) {
+  //   grid-row: 3/4;    
+  // }
+  // @media only screen and (max-width: $bp-medium) {
+  //   grid-row: 4/5;
+  // }
+ 
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    // grid-column: 1/2;
+    grid-row: 1/3;
+    transform: translateY(-1rem);
+  }
+
+  // Можно не выставлять h4 и текст по сетке, так как иконка займет всю первую коонку, а текст с заголовком стоят по порядку написанному в html
+
+  // .heading-4 {
+  //   grid-column: 2/3;
+  //   grid-row: 1/2;
+  // }
+  &__text {
+    // width: 100%;
+    font-size: 1.7rem;
+    // grid-row: 2/3;
+    // grid-column: 2/3;
+  }
+  // Указывать порядок ячеек не надо, так как они стоят по порядку в html , и если мы их поставим с помощью грида на места, то тогда шаблон не будет отзывчивым, так как они не будут переноситься на другую строку
+  
+  // &--1 {
+  //   // width: auto;
+  //   grid-column: 1/2;
+  //   grid-row: 1/2;
+  // }
+
+}

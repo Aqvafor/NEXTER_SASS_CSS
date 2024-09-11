@@ -1,0 +1,61 @@
+.footer{
+  background-color: $color-secondary;
+  // grid-row: 6/7;
+  grid-column:full-start/full-end;
+
+  // grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  // grid-gap:3rem;
+  // @media only screen and(max-width:$bp-large) {
+  //   grid-row: 7/8;
+  // }
+  // @media only screen and (max-width: $bp-medium) {
+  //   grid-row: 9/10;
+  // }
+
+  .nav {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2rem;
+    align-items: center;
+    padding: 8rem;
+    &__item {
+      align-content: center;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    &__link:link,
+    &__link:visited {   
+      display: block;
+      font-family: $font-display;
+      text-decoration: none;
+      transition: all .2s;
+      color: #fff;
+        cursor: pointer;
+        padding: 1.5rem ;
+
+      }
+      
+      &__link:hover,
+      &__link:active {
+        background-color: rgba(#fff, 0.05);
+      transform: translateY(-3px);
+        
+    }
+  }
+  
+  
+  .copyright-text{
+    margin: 2rem 6rem;
+    font-size: 1.4rem;
+    text-align: center;
+    color: $color-grey-light-2;
+
+    // Делаем короче и выравниваем по центу с помощью маргина
+    width: 70%;
+    margin:0 auto;
+    margin-bottom: 3rem;
+  }
+}
